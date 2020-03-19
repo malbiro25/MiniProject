@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>One has won</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="screen">
+	<link rel="stylesheet" href="index.css?a" />
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="index.js?b"></script>
+</head>
+<body>
+    <div class="container-fluid">
+    	<nav class="navbar navbar-inverse">
+    		<div class="navbar-header">
+    			<a class="nickname navbar-brand" href="#">
+    				Username
+    			</a>
+    		</div>
+			<ul class="chat nav navbar-nav">
+				<li><a data-sel="one" id="logoutBtn"><span class="glyphicon glyphicon-log-out"></span></a></li>
+    		</ul>
+    	</nav>
+    	<div class="container">
+    		<div class="row">
+				
+				<div class="alert alert-danger"  role="alert" ></div>
+				<div class="alert alert-success" role="alert" ></div>
+				
+				<div class="noChat col-md-8 col-md-offset-2">
+					<div class="panel panel-default">
+						<div id="formTtl" class="panel-heading">
+							Sign In form
+						</div>
+						<div class="panel-body">
+							<div class="input-group">
+								<span class="regField input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+								<input id="nicknameInput" class="regField form-control" type="text" placeholder="nickname">
+							</div>
+							<div class="input-group">
+								<span class="input-group-addon" style="padding-right:14px">@</span>
+								<input id="emailInput" class="form-control" type="email" placeholder="email">
+							</div>
+							<div class="input-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+								<input id="passwordInput" class="form-control" type="password" placeholder="password">
+								<span class="regField input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+								<input id="passwordConfInput" class="regField form-control" type="password" placeholder="confirm password">
+							</div>
+						</div>
+						<div class="panel-footer">
+							<button id="loginBtn" class="loginField btn btn-success">Login</button>
+							
+							<span id="regSpan" class="loginField pull-right">Don't have an account? <button id="regFormBtn" class="btn btn-link">Create one</button></span>
+							
+							<button id="registerBtn" class="regField btn btn-primary">Register</button>
+							<button id="backLogin" class="regField btn btn-default pull-right">Back to login</button>
+							
+						</div>
+					</div>
+				</div>
+				
+    			<aside class="chat col-md-3">
+    				<div class="panel panel-default">
+                        <div class="panel-heading">All messages for <span class="nickname"></span></div>
+    					<div class="panel-body">
+							<div class="accordion" id="accordionExample">
+							  <div class="card">
+								<div class="card-header" id="headingOne">
+									<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									  Received messages (<span id="toMeCount"></span>)
+									</button>
+								</div>
+
+								<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+								  <div class="card-body">
+									<ul id="toMeList" class="list-group"></ul>
+								  </div>
+								</div>
+							  </div>
+							  <div class="card">
+								<div class="card-header" id="headingTwo">
+									<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+									  Sent messages (<span id="fromMeCount"></span>)
+									</button>
+								</div>
+								<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+								  <div class="card-body">
+									<ul id="fromMeList" class="list-group"></ul>
+								  </div>
+								</div>
+							  </div>
+							</div>
+							
+    					</div>
+						<div class="panel-footer">Total <span id="totalMsgsCount">N</span> messages</div>
+    				</div>
+    			</aside>
+    			<section class="chat col-md-9">
+    				<div class="panel panel-default">
+    					<div id="chatTtl" class="panel-heading">Chat</div>
+    					<div id="chatDesc" class="panel-body">
+							
+						</div>
+						<div class="sendMsg panel-footer">
+							<div class="input-group">
+							  <input id="sendMsgInput" class="form-control" placeholder="Type a message">
+							  <span class="input-group-btn">
+								<button id="sendMsgBtn" class="btn btn-default" ><img class="sendBtnImg" src="sendIcon.png" style="height: 18px"/></button>
+							  </span>
+							</div>
+						</div>
+    				</div>
+    			</section>
+    		</div>
+    	</div>
+    </div>
+</body>
+</html>
